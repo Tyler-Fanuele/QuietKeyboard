@@ -21,7 +21,7 @@ keyboard_layout = KeyboardLayoutUS(keyboard)  # We're in the US :)
 # Open linux terminal with left control + left alt + T
 def open_linux_terminal():
     keyboard.press(Keycode.LEFT_CONTROL)
-    keyboard.press(Keycode.LEFT_ALT)
+    keyboard.press(Keycode.LEFT_ALT) 
     keyboard.press(Keycode.T)
     keyboard.release_all()
     
@@ -36,9 +36,9 @@ def exec_command_in_linux_terminal(command, close_bool):
     type_phrase(command)
     keyboard.press(Keycode.ENTER)
     keyboard.release_all()
-    if close_bool == True:
-        time.sleep(.5)
-        keyboard.press(Keycode.LEFT_ALT, Keycode.SPACE)
+    if close_bool == True: 
+        time.sleep(.5) 
+        keyboard.press(Keycode.LEFT_ALT, Keycode.SPACE) 
         keyboard.release_all()
         keyboard.press(Keycode.ENTER)
         keyboard.release_all()

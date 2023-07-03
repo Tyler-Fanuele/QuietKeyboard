@@ -36,8 +36,8 @@ def exec_command_in_linux_terminal(command, close_bool):
     type_phrase(command)
     keyboard.press(Keycode.ENTER)
     keyboard.release_all()
-    if close_bool == True:
-        time.sleep(.5)
+    if close_bool == True: 
+        time.sleep(.5) 
         keyboard.press(Keycode.LEFT_ALT, Keycode.SPACE)
         keyboard.release_all()
         keyboard.press(Keycode.ENTER)
@@ -54,10 +54,11 @@ if button.value == True:
     while True:
         led.value = True
 else:
-    exec_command_in_linux_terminal('mkdir TEST && cd TEST && touch test.txt && echo test > test.txt', True)
-    #open_linux_terminal()
-    while True:
-        led.value = True
-        time.sleep(.5)
-        led.value = False
-        time.sleep(.5)    
+    with open("/test.txt", "r") as fp:
+        exec_command_in_linux_terminal(fp.readline(), True)
+        #open_linux_terminal()
+        while True:
+            led.value = True
+            time.sleep(.5)
+            led.value = False
+            time.sleep(.5)

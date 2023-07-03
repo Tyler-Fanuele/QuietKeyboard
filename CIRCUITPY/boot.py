@@ -21,7 +21,6 @@ if button.value == True:
     led.value = False
     
     print("In button")
-    
 else:
     time.sleep(.2)
     led.value = True
