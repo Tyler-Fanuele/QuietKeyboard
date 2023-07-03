@@ -114,10 +114,14 @@ def verifyDelay(line, line_number):
             log("Line " + str(line_number) + ": '" + line.strip() + "'. Incorrect syntax, argument needs to be float", 'error')
             exit(1)
 
+def verifyComment(line, line_number):
+    True
+
 instructionVerifyDict = {
     "PRINT" : verifyPrint,
     "DELAY" : verifyDelay,
-    "PRESS" : verifyPress
+    "PRESS" : verifyPress,
+    "#" : verifyComment
 }
 
 if os.path.exists(os.path.abspath(args.location)) == False:
@@ -133,12 +137,13 @@ for line_number, line in enumerate(fp):
     instruction = line.split()[0]
 
     if instruction in instructionVerifyDict:
+        log(instruction + ":", 'verbose')
         instructionVerifyDict[instruction](line, line_number)
     else:
         log("Line " + str(line_number) + ": '" + line.strip() + "'. Incorrect syntax", 'error')
         exit(1)
         
     log("Line: " + str(line_number) + " Verified!", "verbose")
+    log("", 'verbose')
 
-log("")
 log("Script Syntax Verified")
