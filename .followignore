@@ -1,0 +1,7 @@
+.gitignore
+.followignore
+.git
+boot_out.txt
+lib
+settings.toml
+test.txt
