@@ -1,0 +1,5 @@
+PRINT test test2
+PRINT printing things
+DELAY 2.2
+PRESS left_control left_shift R
+DELAY 2.1
